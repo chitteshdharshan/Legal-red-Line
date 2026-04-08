@@ -73,5 +73,9 @@ docker run -p 7860:7860 legal-red-line
 - **Indemnification**: 0.85
 - **Average**: 0.91
 
+## 👥 Contributors
+- **chitteshdharshan**
+- **rammathesh**
+
 ---
 Tag: `openenv`

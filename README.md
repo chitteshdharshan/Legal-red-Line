@@ -1,3 +1,12 @@
+---
+title: Legal Red Line
+emoji: ⚖️
+colorFrom: red
+colorTo: gray
+sdk: docker
+pinned: false
+---
+
 # Legal Red Line: OpenEnv RL Challenge
 
 An OpenEnv environment simulating a real-world task for AI Legal Assistants.

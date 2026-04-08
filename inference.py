@@ -12,7 +12,6 @@ load_dotenv()
 
 # Import our environment
 from legal_env import LegalRedLineEnv, LegalAction
-import json
 from tasks import TASKS
 
 # Constants from environment variables

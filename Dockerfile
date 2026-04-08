@@ -15,5 +15,5 @@ EXPOSE 7860
 # HF_TOKEN is passed as a secret in HF Spaces — don't hardcode it
 ENV HF_TOKEN=""
 
-# Run the OpenEnv server
-CMD ["python", "-m", "openenv.cli", "serve", "legal_env:LegalRedLineEnv", "--port", "7860", "--host", "0.0.0.0"]
+# Run the custom server script
+CMD ["python", "server/app.py"]

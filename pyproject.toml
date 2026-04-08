@@ -6,12 +6,15 @@ build-backend = "setuptools.build_meta"
 name = "legal_red_line"
 version = "1.0.0"
 description = "AI Legal Assistant OpenEnv"
+requires-python = ">=3.11"
 dependencies = [
     "openenv-core",
     "pydantic",
     "openai",
     "fastapi",
-    "uvicorn"
+    "uvicorn",
+    "python-multipart",
+    "python-dotenv"
 ]
 
 [project.scripts]

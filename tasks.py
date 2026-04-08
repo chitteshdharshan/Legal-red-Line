@@ -11,7 +11,7 @@ class LegalTask(BaseModel):
 
 TASKS = [
     LegalTask(
-        name="late_payment_penalty",
+        name="late_payment",
         difficulty="easy",
         clause="Any payment not received within five (5) business days of the due date shall be subject to a late fee of 5% of the outstanding balance.",
         simplified_text_keywords=["late", "fee", "5%", "5 days"],
@@ -27,7 +27,7 @@ TASKS = [
         key_points_keywords=["60 days notice", "termination fee", "one month fee"]
     ),
     LegalTask(
-        name="indemnification_complexity",
+        name="indemnification",
         difficulty="hard",
         clause="Provider shall indemnify, defend, and hold harmless Client from and against any and all third-party claims, liabilities, losses, and expenses (including reasonable attorneys' fees) arising out of or related to Provider's gross negligence or willful misconduct, provided that Client promptly notifies Provider in writing of such claim.",
         simplified_text_keywords=["indemnify", "defend", "third-party claims", "gross negligence", "prompt notice"],

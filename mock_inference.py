@@ -23,7 +23,7 @@ def log_step(step: int, action, reward: float, done: bool = False, error: str = 
             "simplified_text": "ERROR",
             "risk": "UNKNOWN",
             "key_points": [],
-            "reward": round(reward, 2),
+            "reward": max(0.01, round(reward, 2)),
             "done": done,
             "error": error
         }

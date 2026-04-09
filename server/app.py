@@ -6,7 +6,7 @@ from fastapi import FastAPI
 # Add parent directory to path so legal_env can be found
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from openenv.core.env_server import HTTPEnvServer
+from openenv_core.env_server import HTTPEnvServer
 from legal_env import LegalRedLineEnv, LegalAction, LegalObservation
 
 # Initialize the OpenEnv HTTP server wrapper

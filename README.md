@@ -68,7 +68,7 @@ docker run -p 7860:7860 legal-red-line
 ```
 
 ## 📊 Baseline Scores (GPT-4o)
-- **Late Payment**: 1.00
+- **Late Payment**: 0.99
 - **Termination**: 0.90
 - **Indemnification**: 0.85
 - **Average**: 0.91
@@ -76,6 +76,7 @@ docker run -p 7860:7860 legal-red-line
 ## 👥 Contributors
 - **chitteshdharshan**
 - **rammathesh**
+- **lokesh**
 
 ---
 Tag: `openenv`

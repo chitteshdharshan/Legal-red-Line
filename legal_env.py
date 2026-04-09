@@ -1,8 +1,8 @@
 import asyncio
 from typing import List, Optional, Dict, Any
 from pydantic import Field
-from openenv.core.env_server.interfaces import Environment
-from openenv.core.env_server.types import Action, Observation, State
+from openenv_core.env_server.interfaces import Environment
+from openenv_core.env_server.types import Action, Observation, State
 
 from tasks import TASKS, LegalTask
 
@@ -39,7 +39,7 @@ class LegalRedLineEnv(Environment[LegalAction, LegalObservation, LegalState]):
             history=self.history,
             task_name=self.current_task.name,
             done=False,
-            reward=0.0
+            reward=0.01
         )
 
     def step(self, action: LegalAction, **kwargs) -> LegalObservation:
@@ -48,8 +48,8 @@ class LegalRedLineEnv(Environment[LegalAction, LegalObservation, LegalState]):
         # Grading logic
         score, feedback = self._grade(action)
         
-        # Multi-step logic: if score is 1.0 or max steps reached, we are done
-        if score >= 1.0 or self.steps_taken >= self.max_steps:
+        # Multi-step logic: if score is >= 0.99 or max steps reached, we are done
+        if score >= 0.99 or self.steps_taken >= self.max_steps:
             self._done = True
         
         self.history.append(f"Step {self.steps_taken}: Score {score:.2f} - {feedback}")
@@ -113,7 +113,8 @@ class LegalRedLineEnv(Environment[LegalAction, LegalObservation, LegalState]):
         else:
             feedback_parts.append(f"Simplified text missing some details ({found_keywords}/{total_simple_kw} keywords found).")
 
-        return min(1.0, score), "; ".join(feedback_parts)
+        # Ensure score is strictly between 0 and 1 (strictly avoiding 0.0 and 1.0)
+        return max(0.01, min(0.99, score)), "; ".join(feedback_parts)
 
     def close(self):
         pass

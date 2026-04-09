@@ -89,7 +89,7 @@ async def run_task(task_index: int):
     rewards = []
     steps_taken = 0
     success = False
-    total_score = 0.0
+    total_score = 0.01
     
     try:
         for step in range(1, 4):
@@ -128,7 +128,7 @@ async def run_task(task_index: int):
         error_msg = str(e)
         if "insufficient_quota" in error_msg:
             error_msg = "OpenAI Quota Exceeded. Please use a Hugging Face (hf_) token for free inference."
-        log_step(step=steps_taken+1, action="ERROR", reward=0.0, done=True, error=error_msg)
+        log_step(step=steps_taken+1, action="ERROR", reward=0.01, done=True, error=error_msg)
     finally:
         env.close()
         log_end(success=success, steps=steps_taken, score=total_score, rewards=rewards)
